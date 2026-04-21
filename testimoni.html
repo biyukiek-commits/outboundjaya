@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni - OUTBOUND™</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#4a6741',
+                            dark: '#2c3e2d',
+                            light: '#f0f4ef',
+                            beige: '#f2ece4',
+                            text: '#333333'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html,
+        body {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: #333333;
+            background-color: #ffffff;
+            width: 100%;
+        }
+
+        .bg-blob-sub {
+            background: linear-gradient(135deg, #f0f4ef 0%, #ffffff 100%);
+            border-bottom-right-radius: 80px;
+        }
+
+        .float-btn {
+            position: fixed;
+            right: 20px;
+            z-index: 50;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        #wa-btn {
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            font-size: 30px;
+        }
+
+        #btt-btn {
+            bottom: 90px;
+            width: 50px;
+            height: 50px;
+            background-color: #4a6741;
+            font-size: 20px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #btt-btn.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <nav class="container mx-auto px-6 py-6 flex justify-between items-center relative z-10">
+        <div class="text-2xl font-bold tracking-tighter text-brand-dark">OUTBOUND<sup class="text-xs">TM</sup></div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium">
+            <a href="index.html" class="hover:text-brand-green">Beranda</a>
+            <a href="paket.html" class="hover:text-brand-green">Paket</a>
+            <a href="lokasi.html" class="hover:text-brand-green">Lokasi</a>
+            <a href="testimoni.html" class="text-brand-green font-bold">Testimoni</a>
+            <a href="tentangkami.html" class="hover:text-brand-green">Tentang Kami</a>
+            <a href="blog.html" class="hover:text-brand-green">blog</a>
+        </div>
+        <div class="flex space-x-4 text-gray-600">
+            <button><i class="fa-solid fa-calendar-check"></i></button>
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="md:hidden"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <header class="bg-blob-sub pt-12 pb-20">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm font-semibold tracking-wider text-brand-green mb-3 uppercase">Apa Kata Mereka</p>
+            <h1 class="text-4xl lg:text-5xl font-bold text-brand-dark mb-6">Cerita Sukses Bersama Kami</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Kepuasan klien adalah prioritas utama kami. Berikut adalah pengalaman tulus dari perusahaan yang telah mempercayakan kegiatan timnya kepada kami.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="testimonial-card p-8 bg-brand-light rounded-3xl border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-500 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-dark italic mb-6 leading-relaxed">"Sangat profesional! Instrukturnya sangat sabar dan games yang diberikan benar-benar bisa mencairkan suasana kantor kami yang awalnya kaku."</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <img src="https://placehold.co/100x100/4a6741/ffffff?text=AD" alt="User" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-brand-dark text-sm">Andini Dian</h4>
+                            <p class="text-xs text-gray-500 uppercase font-semibold">HR Manager, PT. Teknologi Maju</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card p-8 bg-brand-dark rounded-3xl text-white flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-400 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="italic mb-6 leading-relaxed opacity-90">"Lokasi yang direkomendasikan sangat luar biasa. Program Leadership-nya benar-benar memberikan perspektif baru bagi para manajer kami."</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <img src="https://placehold.co/100x100/ffffff/2c3e2d?text=RS" alt="User" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-sm">Roni Saputra</h4>
+                            <p class="text-[10px] opacity-70 uppercase font-semibold">Direktur Operasional, Bank Sejahtera</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card p-8 bg-brand-light rounded-3xl border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-500 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="text-brand-dark italic mb-6 leading-relaxed">"Fasilitas lengkap dan makanan enak! Anak-anak sangat menikmati rafting dan paintball. Pengalaman outing terbaik tahun ini."</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <img src="https://placehold.co/100x100/4a6741/ffffff?text=ML" alt="User" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-brand-dark text-sm">Maya Lestari</h4>
+                            <p class="text-xs text-gray-500 uppercase font-semibold">GA Lead, Creative Studio</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-brand-light pt-16 pb-8">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-white/10 pb-12 mb-8">
+            <div>
+                <div class="text-xl font-bold mb-6">OUTBOUND<sup class="text-xs">TM</sup></div>
+                <p class="text-sm opacity-70 leading-relaxed">Menciptakan momen kebersamaan yang tak terlupakan melalui
+                    petualangan di alam bebas.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6">Navigasi</h4>
+                <ul class="space-y-3 text-sm opacity-70">
+                    <li><a href="index.html" class="hover:text-white">Beranda</a></li>
+                    <li><a href="paket.html" class="hover:text-white">Paket</a></li>
+                    <li><a href="lokasi.html" class="hover:text-white">Lokasi</a></li>
+                    <li><a href="testimoni.html" class="hover:text-white">Testimoni</a></li>
+                    <li><a href="tentangkami.html" class="hover:text-white">Tentang Kami</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6">Ikuti Kami</h4>
+                <div class="flex space-x-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 text-center text-xs opacity-50">
+            &copy; 2026 Outbound Adventure. All rights reserved.
+        </div>
+    </footer>
+
+    <a href="#" id="btt-btn" class="float-btn"><i class="fa-solid fa-arrow-up"></i></a>
+    <a href="#" id="wa-btn" class="float-btn"><i class="fa-brands fa-whatsapp"></i></a>
+
+    <script>
+        const bttBtn = document.getElementById("btt-btn");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                bttBtn.classList.add("show");
+            } else {
+                bttBtn.classList.remove("show");
+            }
+        };
+        bttBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+
+</html>

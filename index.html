@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUTBOUND™ - Adventure & Team Building</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#4a6741',
+                            dark: '#2c3e2d',
+                            light: '#f0f4ef',
+                            beige: '#f2ece4',
+                            text: '#333333'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html,
+        body {
+            overflow-x: hidden;
+            /* Mencegah geser kanan-kiri */
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: #333333;
+            background-color: #ffffff;
+            width: 100%;
+        }
+
+        .float-btn {
+            position: fixed;
+            right: 20px;
+            z-index: 50;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .float-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        #wa-btn {
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            font-size: 30px;
+        }
+
+        #btt-btn {
+            bottom: 90px;
+            width: 50px;
+            height: 50px;
+            background-color: #4a6741;
+            font-size: 20px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #btt-btn.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .bg-blob {
+            background: linear-gradient(135deg, #f0f4ef 0%, #ffffff 100%);
+            /* Radius dikurangi di mobile agar tidak memicu overflow */
+            border-bottom-right-radius: 100px;
+        }
+
+        @media (min-width: 1024px) {
+            .bg-blob {
+                border-bottom-right-radius: 200px;
+            }
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <nav class="container mx-auto px-6 py-6 flex justify-between items-center relative z-10">
+        <div class="text-2xl font-bold tracking-tighter text-brand-dark">OUTBOUND<sup class="text-xs">TM</sup></div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium">
+            <a href="index.html" class="hover:text-brand-green">Beranda</a>
+            <a href="paket.html" class="hover:text-brand-green">Paket</a>
+            <a href="lokasi.html" class="hover:text-brand-green">Lokasi</a>
+            <a href="testimoni.html" class="hover:text-brand-green">Testimoni</a>
+            <a href="tentangkami.html" class="hover:text-brand-green">Tentang Kami</a>
+            <a href="blog.html" class="hover:text-brand-green">blog</a>
+        </div>
+        <div class="flex space-x-4 text-gray-600">
+            <button><i class="fa-solid fa-calendar-check"></i></button>
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="md:hidden"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <header class="relative pt-10 pb-20 lg:pt-20 lg:pb-32 bg-blob overflow-hidden">
+        <div class="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center">
+            <div class="w-full lg:w-1/2 mt-10 lg:mt-0">
+                <p class="text-sm font-semibold tracking-wider text-gray-500 mb-2">GROW TOGETHER WITH NATURE</p>
+                <h1 class="text-4xl lg:text-7xl font-bold text-brand-dark mb-6 leading-tight">ADVENTURE<sup
+                        class="text-2xl">TM</sup></h1>
+                <p class="text-gray-600 mb-8 leading-relaxed max-w-md">Bangun sinergi tim dan temukan potensi terbaik
+                    melalui aktivitas luar ruangan yang seru dan edukatif.</p>
+                <a href="#"
+                    class="inline-block bg-brand-green hover:bg-brand-dark text-white font-medium py-3 px-8 rounded transition shadow-lg shadow-brand-green/30">Cek
+                    Paket</a>
+            </div>
+            <div class="w-full lg:w-1/2 flex justify-center relative">
+                <img src="https://placehold.co/500x600/4a6741/f0f4ef?text=Outbound+Activities" alt="Outbound Activity"
+                    class="rounded-xl shadow-2xl object-cover w-full max-w-[400px] lg:max-w-full h-auto">
+            </div>
+        </div>
+    </header>
+
+    <section class="py-16 bg-white overflow-hidden">
+        <div
+            class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center border-b border-gray-100 pb-16">
+            <h2 class="text-2xl font-bold text-brand-dark max-w-sm mb-8 md:mb-0">Dipercaya oleh 500+ Perusahaan sejak
+                2008</h2>
+            <div class="flex space-x-12">
+                <div>
+                    <h3 class="text-3xl lg:text-4xl font-bold text-brand-dark">10k+</h3>
+                    <p class="text-xs text-gray-500 mt-2">Peserta Outbound<br>Per Tahun</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl lg:text-4xl font-bold text-brand-dark">4.9</h3>
+                    <p class="text-xs text-gray-500 mt-2">Rating Kepuasan<br>Klien</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-brand-dark mb-4">Galeri Kegiatan</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Momen keseruan dan kebersamaan para peserta dalam berbagai program outbound kami.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item overflow-hidden rounded-2xl shadow-md h-64">
+                    <img src="https://placehold.co/600x400/4a6741/ffffff?text=Rafting+Adventure" alt="Kegiatan 1" class="w-full h-full object-cover transition-transform duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-2xl shadow-md h-64">
+                    <img src="https://placehold.co/600x400/2c3e2d/ffffff?text=Team+Bonding" alt="Kegiatan 2" class="w-full h-full object-cover transition-transform duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-2xl shadow-md h-64">
+                    <img src="https://placehold.co/600x400/7f9065/ffffff?text=High+Ropes" alt="Kegiatan 3" class="w-full h-full object-cover transition-transform duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-2xl shadow-md h-64 lg:col-span-2">
+                    <img src="https://placehold.co/1200x400/f2ece4/333333?text=Corporate+Gathering" alt="Kegiatan 4" class="w-full h-full object-cover transition-transform duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-2xl shadow-md h-64">
+                    <img src="https://placehold.co/600x400/4a6741/f0f4ef?text=Archery+Battle" alt="Kegiatan 5" class="w-full h-full object-cover transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white overflow-hidden">
+        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-10">
+            <div class="w-full lg:w-1/2 flex justify-center">
+                <img src="https://placehold.co/400x500/e6e0d4/4a6741?text=Team+Building" alt="Team Building"
+                    class="rounded-lg w-full max-w-sm lg:max-w-full h-auto">
+            </div>
+            <div class="w-full lg:w-1/2">
+                <h2 class="text-3xl lg:text-4xl font-bold text-brand-dark mb-6">Corporate Team Building</h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">Program unggulan kami dirancang khusus untuk meningkatkan
+                    komunikasi dan kerja sama tim menggunakan metode experiential learning.</p>
+                <div class="flex flex-wrap gap-6">
+                    <div>
+                        <h4 class="text-lg font-bold text-brand-dark">Profesional</h4>
+                        <p class="text-xs text-gray-500">Facilitator</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-brand-dark">Custom</h4>
+                        <p class="text-xs text-gray-500">Programs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-brand-light overflow-hidden">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-2xl lg:text-3xl font-bold text-center text-brand-dark mb-12">Pertanyaan Populer</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded shadow-sm">
+                    <h4 class="font-bold text-brand-dark text-sm mb-2">Apakah program bisa disesuaikan?</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Tentu, kami merancang program berdasarkan kebutuhan
+                        spesifik perusahaan Anda.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow-sm">
+                    <h4 class="font-bold text-brand-dark text-sm mb-2">Berapa jumlah minimal peserta untuk satu kegiatan?</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Kami melayani grup mulai dari minimal 20 orang hingga korporasi besar dengan 500+ peserta.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow-sm">
+                    <h4 class="font-bold text-brand-dark text-sm mb-2">Apakah fasilitas transportasi sudah termasuk dalam paket?</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Kami menyediakan opsi paket lengkap (all-in) yang mencakup transportasi, akomodasi, makan, dan dokumentasi.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow-sm">
+                    <h4 class="font-bold text-brand-dark text-sm mb-2">Bagaimana standar keamanan kegiatan outbound Anda?</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Keamanan adalah prioritas utama. Seluruh instruktur kami bersertifikat dan kami menggunakan peralatan standar internasional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 px-4 lg:px-6 overflow-hidden">
+        <div
+            class="container mx-auto bg-brand-green rounded-xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-between shadow-xl">
+            <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4">Dapatkan Penawaran</h2>
+                <p class="text-brand-beige text-sm">Daftarkan email Anda untuk katalog paket outbound terbaru.</p>
+            </div>
+            <div class="w-full md:w-1/2">
+                <form class="flex flex-col sm:flex-row bg-white/10 p-1 rounded-lg gap-2 sm:bg-white">
+                    <input type="email" placeholder="Email Anda"
+                        class="w-full px-4 py-3 outline-none text-gray-700 bg-white sm:bg-transparent rounded-md"
+                        required>
+                    <button type="submit"
+                        class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-md transition">Kirim</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-brand-light pt-16 pb-8">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-white/10 pb-12 mb-8">
+            <div>
+                <div class="text-xl font-bold mb-6">OUTBOUND<sup class="text-xs">TM</sup></div>
+                <p class="text-sm opacity-70 leading-relaxed">Menciptakan momen kebersamaan yang tak terlupakan melalui
+                    petualangan di alam bebas.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6">Navigasi</h4>
+                <ul class="space-y-3 text-sm opacity-70">
+                    <li><a href="index.html" class="hover:text-white">Beranda</a></li>
+                    <li><a href="#" class="hover:text-white">Paket</a></li>
+                    <li><a href="lokasi.html" class="hover:text-white">Lokasi</a></li>
+                    <li><a href="#" class="hover:text-white">Testimoni</a></li>
+                    <li><a href="#" class="hover:text-white">Tentang Kami</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6">Ikuti Kami</h4>
+                <div class="flex space-x-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 text-center text-xs opacity-50">
+            &copy; 2026 Outbound Adventure. All rights reserved.
+        </div>
+    </footer>
+
+    <a href="#" id="btt-btn" class="float-btn"><i class="fa-solid fa-arrow-up"></i></a>
+    <a href="#" id="wa-btn" class="float-btn"><i class="fa-brands fa-whatsapp"></i></a>
+
+    <script>
+        const bttBtn = document.getElementById("btt-btn");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                bttBtn.classList.add("show");
+            } else {
+                bttBtn.classList.remove("show");
+            }
+        };
+        bttBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+
+</html>
