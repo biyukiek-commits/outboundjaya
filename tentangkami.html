@@ -59,6 +59,12 @@
             border-bottom-right-radius: 80px;
         }
 
+        @media (min-width: 1024px) {
+            .bg-blob-sub {
+                border-bottom-right-radius: 150px;
+            }
+        }
+
         .float-btn {
             position: fixed;
             right: 20px;
@@ -99,61 +105,72 @@
 
 <body class="antialiased">
 
-    <nav class="container mx-auto px-6 py-6 flex justify-between items-center relative z-10">
+    <nav class="container mx-auto px-4 md:px-6 py-6 flex justify-between items-center relative z-50 bg-white md:bg-transparent">
         <div class="text-2xl font-bold tracking-tighter text-brand-dark">OUTBOUND<sup class="text-xs">TM</sup></div>
+        
         <div class="hidden md:flex space-x-8 text-sm font-medium">
-            <a href="index.html" class="hover:text-brand-green">Beranda</a>
-            <a href="paket.html" class="hover:text-brand-green">Paket</a>
-            <a href="lokasi.html" class="hover:text-brand-green">Lokasi</a>
-            <a href="testimoni.html" class="hover:text-brand-green">Testimoni</a>
+            <a href="index.html" class="hover:text-brand-green transition">Beranda</a>
+            <a href="paket.html" class="hover:text-brand-green transition">Paket</a>
+            <a href="lokasi.html" class="hover:text-brand-green transition">Lokasi</a>
+            <a href="testimoni.html" class="hover:text-brand-green transition">Testimoni</a>
             <a href="tentangkami.html" class="text-brand-green font-bold">Tentang Kami</a>
-            <a href="blog.html" class="hover:text-brand-green">blog</a>
+            <a href="blog.html" class="hover:text-brand-green transition">Blog</a>
         </div>
-        <div class="flex space-x-4 text-gray-600">
-            <button><i class="fa-solid fa-calendar-check"></i></button>
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-            <button class="md:hidden"><i class="fa-solid fa-bars"></i></button>
+
+        <div class="flex space-x-5 text-gray-600 items-center">
+            <button class="hover:text-brand-green transition"><i class="fa-solid fa-calendar-check"></i></button>
+            <button class="hover:text-brand-green transition"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none"><i class="fa-solid fa-bars"></i></button>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 flex-col px-4 py-2">
+            <a href="index.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Beranda</a>
+            <a href="paket.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Paket</a>
+            <a href="lokasi.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Lokasi</a>
+            <a href="testimoni.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Testimoni</a>
+            <a href="tentangkami.html" class="block py-3 text-brand-green font-bold border-b border-gray-50">Tentang Kami</a>
+            <a href="blog.html" class="block py-3 text-gray-700 hover:text-brand-green">Blog</a>
         </div>
     </nav>
 
-    <header class="bg-blob-sub pt-12 pb-20">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-sm font-semibold tracking-wider text-brand-green mb-3 uppercase">Mengenal Lebih Dekat</p>
-            <h1 class="text-4xl lg:text-5xl font-bold text-brand-dark mb-6">Dedikasi Kami Untuk Tim Anda</h1>
-            <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+    <header class="bg-blob-sub pt-10 pb-16 md:pt-12 md:pb-20">
+        <div class="container mx-auto px-4 md:px-6 text-center">
+            <p class="text-xs md:text-sm font-semibold tracking-wider text-brand-green mb-2 md:mb-3 uppercase">Mengenal Lebih Dekat</p>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4 md:mb-6 leading-tight">Dedikasi Kami Untuk Tim Anda</h1>
+            <p class="text-sm md:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Kami adalah partner strategis dalam pengembangan sumber daya manusia melalui metode pembelajaran luar ruangan yang inovatif dan menyenangkan.
             </p>
         </div>
     </header>
 
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
+    <section class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16">
                 <div class="w-full lg:w-1/2">
-                    <img src="img/IMG_5536.webp" alt="Our Team" class="rounded-3xl shadow-2xl">
+                    <img src="img/IMG_5536.webp" alt="Our Team" class="rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl w-full h-auto object-cover">
                 </div>
-                <div class="w-full lg:w-1/2">
-                    <h2 class="text-3xl font-bold text-brand-dark mb-6">Sejarah & Visi Kami</h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
+                <div class="w-full lg:w-1/2 mt-4 lg:mt-0 text-center md:text-left">
+                    <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-4 md:mb-6">Sejarah & Visi Kami</h2>
+                    <p class="text-sm md:text-base text-gray-600 mb-6 md:mb-8 leading-relaxed">
                         Berdiri sejak tahun 2008, OUTBOUND™ bermula dari semangat untuk menghadirkan aktivitas luar ruangan yang tidak hanya sekadar rekreasi, namun juga memberikan dampak positif bagi karakter dan kerja sama tim.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex gap-4">
-                            <div class="flex-shrink-0 w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-green">
+                    <div class="space-y-4 md:space-y-6 text-left">
+                        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3 md:gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-green text-lg">
                                 <i class="fa-solid fa-eye"></i>
                             </div>
-                            <div>
-                                <h4 class="font-bold text-brand-dark">Visi</h4>
-                                <p class="text-sm text-gray-500">Menjadi provider outbound terkemuka di Indonesia yang diakui atas inovasi program dan keunggulan operasional.</p>
+                            <div class="text-center sm:text-left">
+                                <h4 class="font-bold text-brand-dark text-base md:text-lg">Visi</h4>
+                                <p class="text-xs md:text-sm text-gray-500 leading-relaxed mt-1 break-words">Menjadi provider outbound terkemuka di Indonesia yang diakui atas inovasi program dan keunggulan operasional.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="flex-shrink-0 w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-green">
+                        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3 md:gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-green text-lg">
                                 <i class="fa-solid fa-bullseye"></i>
                             </div>
-                            <div>
-                                <h4 class="font-bold text-brand-dark">Misi</h4>
-                                <p class="text-sm text-gray-500">Menciptakan lingkungan belajar yang aman dan inspiratif untuk membantu organisasi mencapai potensi maksimalnya.</p>
+                            <div class="text-center sm:text-left">
+                                <h4 class="font-bold text-brand-dark text-base md:text-lg">Misi</h4>
+                                <p class="text-xs md:text-sm text-gray-500 leading-relaxed mt-1 break-words">Menciptakan lingkungan belajar yang aman dan inspiratif untuk membantu organisasi mencapai potensi maksimalnya.</p>
                             </div>
                         </div>
                     </div>
@@ -162,62 +179,76 @@
         </div>
     </section>
 
-    <section class="py-20 bg-brand-light">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-brand-dark mb-12">Nilai-Nilai Utama Kami</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="p-8 bg-white rounded-3xl shadow-sm">
-                    <div class="text-4xl text-brand-green mb-4"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h4 class="font-bold mb-2">Safety First</h4>
-                    <p class="text-xs text-gray-500">Keselamatan peserta adalah prioritas tanpa kompromi dalam setiap aktivitas.</p>
+    <section class="py-12 md:py-20 bg-brand-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-brand-dark mb-8 md:mb-12">Nilai-Nilai Utama Kami</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 text-center">
+                
+                <div class="p-6 md:p-8 bg-white rounded-2xl md:rounded-3xl shadow-sm flex flex-col h-full items-center justify-start hover:shadow-md transition">
+                    <div class="text-3xl md:text-4xl text-brand-green mb-3 md:mb-4"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4 class="font-bold mb-2 text-base md:text-lg">Safety First</h4>
+                    <p class="text-xs md:text-sm text-gray-500 break-words">Keselamatan peserta adalah prioritas tanpa kompromi dalam setiap aktivitas.</p>
                 </div>
-                <div class="p-8 bg-white rounded-3xl shadow-sm">
-                    <div class="text-4xl text-brand-green mb-4"><i class="fa-solid fa-lightbulb"></i></div>
-                    <h4 class="font-bold mb-2">Innovation</h4>
-                    <p class="text-xs text-gray-500">Terus mengembangkan metode permainan yang relevan dengan dinamika kerja modern.</p>
+                
+                <div class="p-6 md:p-8 bg-white rounded-2xl md:rounded-3xl shadow-sm flex flex-col h-full items-center justify-start hover:shadow-md transition">
+                    <div class="text-3xl md:text-4xl text-brand-green mb-3 md:mb-4"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h4 class="font-bold mb-2 text-base md:text-lg">Innovation</h4>
+                    <p class="text-xs md:text-sm text-gray-500 break-words">Terus mengembangkan metode permainan yang relevan dengan dinamika kerja modern.</p>
                 </div>
-                <div class="p-8 bg-white rounded-3xl shadow-sm">
-                    <div class="text-4xl text-brand-green mb-4"><i class="fa-solid fa-heart"></i></div>
-                    <h4 class="font-bold mb-2">Integrity</h4>
-                    <p class="text-xs text-gray-500">Memberikan layanan transparan dan jujur kepada setiap klien kami.</p>
+                
+                <div class="p-6 md:p-8 bg-white rounded-2xl md:rounded-3xl shadow-sm flex flex-col h-full items-center justify-start hover:shadow-md transition">
+                    <div class="text-3xl md:text-4xl text-brand-green mb-3 md:mb-4"><i class="fa-solid fa-heart"></i></div>
+                    <h4 class="font-bold mb-2 text-base md:text-lg">Integrity</h4>
+                    <p class="text-xs md:text-sm text-gray-500 break-words">Memberikan layanan transparan dan jujur kepada setiap klien kami.</p>
                 </div>
+
             </div>
         </div>
     </section>
 
     <footer class="bg-brand-dark text-brand-light pt-16 pb-8">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-white/10 pb-12 mb-8">
+        <div class="container mx-auto px-4 md:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-12 border-b border-white/10 pb-10 md:pb-12 mb-8">
             <div>
-                <div class="text-xl font-bold mb-6">OUTBOUND<sup class="text-xs">TM</sup></div>
-                <p class="text-sm opacity-70 leading-relaxed">Menciptakan momen kebersamaan yang tak terlupakan melalui petualangan di alam bebas.</p>
+                <div class="text-xl font-bold mb-4 md:mb-6 text-white">OUTBOUND<sup class="text-xs">TM</sup></div>
+                <p class="text-xs md:text-sm opacity-70 leading-relaxed max-w-sm">Menciptakan momen kebersamaan yang tak terlupakan melalui petualangan di alam bebas.</p>
             </div>
             <div>
-                <h4 class="font-bold mb-6">Navigasi</h4>
-                <ul class="space-y-3 text-sm opacity-70">
-                    <li><a href="index.html" class="hover:text-white">Beranda</a></li>
-                    <li><a href="paket.html" class="hover:text-white">Paket</a></li>
-                    <li><a href="lokasi.html" class="hover:text-white">Lokasi</a></li>
-                    <li><a href="testimoni.html" class="hover:text-white">Testimoni</a></li>
-                    <li><a href="tentangkami.html" class="hover:text-white">Tentang Kami</a></li>
+                <h4 class="font-bold mb-4 md:mb-6 text-white">Navigasi</h4>
+                <ul class="space-y-3 text-xs md:text-sm opacity-70">
+                    <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+                    <li><a href="paket.html" class="hover:text-white transition">Paket</a></li>
+                    <li><a href="lokasi.html" class="hover:text-white transition">Lokasi</a></li>
+                    <li><a href="testimoni.html" class="hover:text-white transition">Testimoni</a></li>
+                    <li><a href="tentangkami.html" class="hover:text-white transition">Tentang Kami</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold mb-6">Ikuti Kami</h4>
+                <h4 class="font-bold mb-4 md:mb-6 text-white">Ikuti Kami</h4>
                 <div class="flex space-x-4">
                     <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://wa.me/6281234567890" target="_blank" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
-        <div class="container mx-auto px-6 text-center text-xs opacity-50">
+        <div class="container mx-auto px-4 md:px-6 text-center text-xs opacity-50">
             &copy; 2026 Outbound Adventure. All rights reserved.
         </div>
     </footer>
 
     <a href="#" id="btt-btn" class="float-btn"><i class="fa-solid fa-arrow-up"></i></a>
-    <a href="#" id="wa-btn" class="float-btn"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://wa.me/6281234567890" target="_blank" id="wa-btn" class="float-btn"><i class="fa-brands fa-whatsapp"></i></a>
 
     <script>
+        // Logic untuk Dropdown Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Logic untuk Back to Top Button
         const bttBtn = document.getElementById("btt-btn");
         window.onscroll = function () {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {

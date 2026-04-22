@@ -39,38 +39,60 @@
     <style>
         html, body { overflow-x: hidden; scroll-behavior: smooth; color: #333; }
         .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        blockquote { border-left: 5px solid #4a6741; padding: 1.5rem 2rem; font-style: italic; background: #f9fafb; margin: 2.5rem 0; border-radius: 0 20px 20px 0; }
+        
+        blockquote { border-left: 5px solid #4a6741; padding: 1.5rem; font-style: italic; background: #f9fafb; margin: 1.5rem 0; border-radius: 0 15px 15px 0; }
+        
         .toc-box { display: none; }
         .toc-box.active { display: block; }
         .float-btn { position: fixed; right: 20px; z-index: 50; border-radius: 50px; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s; }
         #wa-btn { bottom: 20px; width: 60px; height: 60px; background: #25D366; font-size: 30px; }
         #btt-btn { bottom: 90px; width: 50px; height: 50px; background: #4a6741; font-size: 20px; opacity: 0; pointer-events: none; }
         #btt-btn.show { opacity: 1; pointer-events: auto; }
-        article h2 { font-size: 1.75rem; font-weight: 700; color: #2c3e2d; margin-top: 3rem; margin-bottom: 1.25rem; }
-        article h3 { font-size: 1.3rem; font-weight: 600; color: #4a6741; margin-top: 2rem; margin-bottom: 1rem; }
-        article p { line-height: 1.9; margin-bottom: 1.5rem; text-align: justify; }
+        
+        /* Typography adjustments for article content */
+        article h2 { font-size: 1.5rem; font-weight: 700; color: #2c3e2d; margin-top: 2rem; margin-bottom: 1rem; }
+        article h3 { font-size: 1.25rem; font-weight: 600; color: #4a6741; margin-top: 1.5rem; margin-bottom: 0.8rem; }
+        article p { line-height: 1.8; margin-bottom: 1.25rem; text-align: justify; }
+        
+        @media (min-width: 768px) {
+            article h2 { font-size: 1.75rem; margin-top: 3rem; margin-bottom: 1.25rem; }
+            article h3 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; }
+            article p { line-height: 1.9; margin-bottom: 1.5rem; }
+            blockquote { padding: 1.5rem 2rem; margin: 2.5rem 0; border-radius: 0 20px 20px 0; }
+        }
     </style>
 </head>
 
 <body class="antialiased">
 
-    <nav class="container mx-auto px-6 py-6 flex justify-between items-center relative z-10">
+    <nav class="container mx-auto px-4 md:px-6 py-6 flex justify-between items-center relative z-50 bg-white md:bg-transparent">
         <div class="text-2xl font-bold tracking-tighter text-brand-dark">OUTBOUND<sup class="text-xs">TM</sup></div>
+        
         <div class="hidden md:flex space-x-8 text-sm font-medium">
-            <a href="index.html" class="hover:text-brand-green">Beranda</a>
-            <a href="paket.html" class="hover:text-brand-green">Paket</a>
-            <a href="lokasi.html" class="hover:text-brand-green">Lokasi</a>
-            <a href="testimoni.html" class="hover:text-brand-green">Testimoni</a>
-            <a href="tentangkami.html" class="hover:text-brand-green">Tentang Kami</a>
-            <a href="blog.html" class="text-brand-green font-bold">Blog</a>
+            <a href="index.html" class="hover:text-brand-green transition">Beranda</a>
+            <a href="paket.html" class="hover:text-brand-green transition">Paket</a>
+            <a href="lokasi.html" class="hover:text-brand-green transition">Lokasi</a>
+            <a href="testimoni.html" class="hover:text-brand-green transition">Testimoni</a>
+            <a href="tentangkami.html" class="hover:text-brand-green transition">Tentang Kami</a>
+            <a href="blog.html" class="text-brand-green font-bold border-b-2 border-brand-green pb-1">Blog</a>
         </div>
+        
         <div class="flex space-x-4 text-gray-600">
-            <button class="md:hidden"><i class="fa-solid fa-bars"></i></button>
+            <button id="mobile-menu-btn" class="md:hidden focus:outline-none"><i class="fa-solid fa-bars text-xl"></i></button>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 flex-col px-4 py-2">
+            <a href="index.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Beranda</a>
+            <a href="paket.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Paket</a>
+            <a href="lokasi.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Lokasi</a>
+            <a href="testimoni.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Testimoni</a>
+            <a href="tentangkami.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Tentang Kami</a>
+            <a href="blog.html" class="block py-3 text-brand-green font-bold">Blog</a>
         </div>
     </nav>
 
-    <div class="container mx-auto px-6 py-4">
-        <nav class="text-xs text-gray-400 flex items-center gap-2">
+    <div class="container mx-auto px-4 md:px-6 py-4">
+        <nav class="text-[10px] md:text-xs text-gray-400 flex items-center gap-2 overflow-x-auto whitespace-nowrap">
             <a href="index.html" class="hover:text-brand-green transition">Beranda</a>
             <i class="fa-solid fa-chevron-right text-[8px]"></i>
             <a href="blog.html" class="hover:text-brand-green transition">Blog</a>
@@ -79,38 +101,38 @@
         </nav>
     </div>
 
-    <main class="container mx-auto px-6 lg:px-24 py-10">
+    <main class="container mx-auto px-4 md:px-6 lg:px-24 py-6 md:py-10">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-3xl lg:text-5xl font-bold text-brand-dark leading-tight mb-8">Mengapa Safety Adalah Kunci Utama dalam Setiap Kegiatan Outbound</h1>
+            <h1 class="text-2xl md:text-3xl lg:text-5xl font-bold text-brand-dark leading-tight mb-6 md:mb-8">Mengapa Safety Adalah Kunci Utama dalam Setiap Kegiatan Outbound</h1>
             
-            <figure class="mb-12">
-                <img src="https://placehold.co/1200x600/2c3e2d/ffffff?text=Outbound+Safety+Standards" alt="Tim sedang melakukan pengecekan alat keamanan outbound" class="rounded-3xl shadow-xl w-full h-64 lg:h-[450px] object-cover">
-                <figcaption class="text-xs text-center text-gray-400 mt-4 italic">Keamanan bukan sekadar pelengkap, melainkan fondasi utama setiap aktivitas petualangan.</figcaption>
+            <figure class="mb-8 md:mb-12">
+                <img src="https://placehold.co/1200x600/2c3e2d/ffffff?text=Outbound+Safety+Standards" alt="Tim sedang melakukan pengecekan alat keamanan outbound" class="rounded-2xl md:rounded-3xl shadow-lg md:shadow-xl w-full h-48 md:h-64 lg:h-[450px] object-cover">
+                <figcaption class="text-[10px] md:text-xs text-center text-gray-500 mt-3 px-2 italic">Keamanan bukan sekadar pelengkap, melainkan fondasi utama setiap aktivitas petualangan.</figcaption>
             </figure>
 
-            <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl mb-12 shadow-sm">
+            <div class="bg-gray-50 border border-gray-100 p-5 md:p-6 rounded-xl md:rounded-2xl mb-8 md:mb-12 shadow-sm">
                 <div onclick="document.getElementById('toc').classList.toggle('active')" class="flex justify-between items-center cursor-pointer">
-                    <h4 class="font-bold text-brand-dark text-sm uppercase tracking-widest">Daftar Isi Artikel</h4>
+                    <h4 class="font-bold text-brand-dark text-xs md:text-sm uppercase tracking-widest">Daftar Isi Artikel</h4>
                     <i class="fa-solid fa-list text-brand-green"></i>
                 </div>
-                <div id="toc" class="toc-box mt-6 space-y-3 text-sm text-gray-600 border-t pt-4">
-                    <a href="#filosofi" class="block hover:text-brand-green transition">1. Filosofi Safety First dalam Outbound</a>
-                    <a href="#standar-alat" class="block hover:text-brand-green transition">2. Standar Peralatan Internasional (UIAA & CE)</a>
-                    <a href="#instruktur" class="block hover:text-brand-green transition ml-4">2.1 Peran Instruktur Bersertifikat</a>
-                    <a href="#mitigasi" class="block hover:text-brand-green transition">3. Mitigasi Risiko dan Prosedur Darurat</a>
-                    <a href="#psikologis" class="block hover:text-brand-green transition">4. Keamanan Psikologis Peserta</a>
-                    <a href="#kesimpulan" class="block hover:text-brand-green transition">5. Kesimpulan dan FAQ</a>
+                <div id="toc" class="toc-box mt-4 md:mt-6 space-y-2 md:space-y-3 text-xs md:text-sm text-gray-600 border-t pt-4">
+                    <a href="#filosofi" class="block hover:text-brand-green transition py-1">1. Filosofi Safety First dalam Outbound</a>
+                    <a href="#standar-alat" class="block hover:text-brand-green transition py-1">2. Standar Peralatan Internasional (UIAA & CE)</a>
+                    <a href="#instruktur" class="block hover:text-brand-green transition pl-4 py-1">2.1 Peran Instruktur Bersertifikat</a>
+                    <a href="#mitigasi" class="block hover:text-brand-green transition py-1">3. Mitigasi Risiko dan Prosedur Darurat</a>
+                    <a href="#psikologis" class="block hover:text-brand-green transition py-1">4. Keamanan Psikologis Peserta</a>
+                    <a href="#kesimpulan" class="block hover:text-brand-green transition py-1">5. Kesimpulan dan FAQ</a>
                 </div>
             </div>
 
-            <article class="prose max-w-none">
+            <article class="text-sm md:text-base break-words">
                 <p id="filosofi">Outbound seringkali dianggap sebagai kegiatan yang menyenangkan, penuh tawa, dan tantangan fisik. Namun, di balik setiap senyum dan teriakan kegembiraan, terdapat sebuah sistem yang bekerja sangat keras untuk memastikan bahwa setiap individu kembali ke rumah dalam keadaan sehat dan selamat. Inilah yang kita sebut sebagai manajemen risiko atau *Safety Management System*.</p>
                 
                 <p>Dalam dunia outdoor education, keselamatan bukan hanya tentang memakai helm atau tali pengaman. Ini adalah tentang budaya. Tanpa standar keamanan yang ketat, aktivitas luar ruangan yang seharusnya membangun tim justru bisa menjadi bencana yang merugikan perusahaan dan mental karyawan. Mengapa ini menjadi kunci utama? Karena rasa aman adalah kebutuhan dasar manusia sebelum mereka bisa belajar dan berkolaborasi secara efektif.</p>
 
-                <div class="bg-brand-light p-5 border-l-4 border-brand-green my-8">
-                    <p class="font-bold text-sm text-brand-dark mb-1">Baca juga:</p>
-                    <a href="cara-meningkatkan-sinergi-tim-kantor.html" class="text-brand-green text-sm hover:underline font-medium">5 Cara Meningkatkan Sinergi Tim di Kantor</a>
+                <div class="bg-brand-light p-4 md:p-5 border-l-4 border-brand-green my-6 md:my-8 rounded-r-lg">
+                    <p class="font-bold text-xs md:text-sm text-brand-dark mb-1">Baca juga:</p>
+                    <a href="cara-meningkatkan-sinergi-tim-kantor.html" class="text-brand-green text-xs md:text-sm hover:underline font-medium">5 Cara Meningkatkan Sinergi Tim di Kantor</a>
                 </div>
 
                 <h2 id="standar-alat">Peralatan Berstandar Internasional</h2>
@@ -118,31 +140,31 @@
                 
                 <p>Setiap tali *carmantel*, *carabiner*, dan *harness* memiliki masa pakai atau *shelf life*. Kami melakukan audit rutin dan pemusnahan alat yang sudah mencapai batas maksimal pemakaian, meskipun secara visual masih terlihat baik. Hal ini sangat krusial karena beban statis dan dinamis saat aktivitas seperti *flying fox* atau *rappelling* membutuhkan kekuatan material yang tidak bisa ditoleransi kekurangannya.</p>
 
-                <blockquote>
+                <blockquote class="text-sm md:text-base">
                     "Keselamatan bukan hanya tentang prosedur yang tertulis, tetapi tentang keputusan yang diambil setiap detik di lapangan."
                 </blockquote>
 
                 <h3 id="instruktur">Instruktur Bersertifikat BNSP</h3>
                 <p>Peralatan terbaik di dunia tidak akan berguna jika dioperasikan oleh tangan yang salah. Instruktur kami wajib memiliki sertifikasi kompetensi dari BNSP (Badan Nasional Sertifikasi Profesi) di bidang kepanduan outbound. Mereka dilatih untuk membaca cuaca, kondisi fisik peserta yang mulai kelelahan, hingga dinamika psikologis kelompok yang bisa memicu kecelakaan.</p>
 
-                <div class="my-14">
-                    <a href="https://wa.me/628000000000?text=Halo%20saya%20ingin%20tanya%20prosedur%20keamanan%20outbound" class="block group relative overflow-hidden rounded-3xl">
-                        <img src="https://placehold.co/1200x400/25D366/ffffff?text=Konsultasi+Safety+Plan+Gratis+Klik+Di+Sini" alt="Konsultasi WhatsApp" class="w-full transition duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition"></div>
+                <div class="my-8 md:my-14">
+                    <a href="https://wa.me/628000000000?text=Halo%20saya%20ingin%20tanya%20prosedur%20keamanan%20outbound" class="block group relative overflow-hidden rounded-2xl md:rounded-3xl">
+                        <img src="https://placehold.co/1200x400/25D366/ffffff?text=Konsultasi+Safety+Plan+Gratis+Klik+Di+Sini" alt="Konsultasi WhatsApp" class="w-full h-32 md:h-auto object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition"></div>
                     </a>
                 </div>
 
                 <h2 id="mitigasi">Mitigasi Risiko dan SOP Darurat</h2>
                 <p>Kami menerapkan prinsip *Double System* pada setiap aktivitas ketinggian. Artinya, jika satu sistem gagal, masih ada satu sistem pengaman cadangan yang akan menahan peserta. Selain itu, sebelum kegiatan dimulai, tim medis kami akan melakukan *health screening* singkat untuk memastikan tidak ada peserta yang memiliki riwayat penyakit jantung atau cedera tulang belakang yang berisiko.</p>
                 
-                <figure class="my-12">
-                    <img src="https://placehold.co/800x450/4a6741/ffffff?text=Emergency+Response+Drill" alt="Simulasi tanggap darurat tim outbound" class="rounded-2xl shadow-md w-full">
-                    <figcaption class="text-xs text-gray-500 mt-3 text-center">Tim kami melakukan simulasi penyelamatan rutin setiap bulan untuk mengasah kecepatan respon.</figcaption>
+                <figure class="my-8 md:my-12">
+                    <img src="https://placehold.co/800x450/4a6741/ffffff?text=Emergency+Response+Drill" alt="Simulasi tanggap darurat tim outbound" class="rounded-xl md:rounded-2xl shadow-md w-full h-48 md:h-auto object-cover">
+                    <figcaption class="text-[10px] md:text-xs text-gray-500 mt-3 text-center px-2">Tim kami melakukan simulasi penyelamatan rutin setiap bulan untuk mengasah kecepatan respon.</figcaption>
                 </figure>
 
-                <div class="bg-brand-light p-5 border-l-4 border-brand-green my-8">
-                    <p class="font-bold text-sm text-brand-dark mb-1">Baca juga:</p>
-                    <a href="review-tempat-outbound-bogor-view-terbaik.html" class="text-brand-green text-sm hover:underline font-medium">Rekomendasi Lokasi Outbound Terpopuler 2024</a>
+                <div class="bg-brand-light p-4 md:p-5 border-l-4 border-brand-green my-6 md:my-8 rounded-r-lg">
+                    <p class="font-bold text-xs md:text-sm text-brand-dark mb-1">Baca juga:</p>
+                    <a href="review-tempat-outbound-bogor-view-terbaik.html" class="text-brand-green text-xs md:text-sm hover:underline font-medium">Rekomendasi Lokasi Outbound Terpopuler 2024</a>
                 </div>
 
                 <h2 id="psikologis">Keamanan Psikologis: Kunci Efektivitas Belajar</h2>
@@ -151,89 +173,101 @@
                 <h2 id="kesimpulan">Kesimpulan</h2>
                 <p>Memilih provider outbound berdasarkan harga termurah adalah risiko yang sangat besar. Pastikan Anda memeriksa rekam jejak keamanan mereka. Keamanan yang baik akan menghasilkan pengalaman yang tak terlupakan secara positif, bukan karena cidera, melainkan karena keberhasilan tim melampaui batas diri.</p>
 
-                <div class="mt-12 space-y-4">
-                    <h3 class="text-xl font-bold">FAQ Tentang Keamanan Outbound</h3>
-                    <div class="border rounded-xl p-4">
-                        <h4 class="font-bold text-sm">Apakah peserta yang takut ketinggian wajib ikut flying fox?</h4>
-                        <p class="text-xs text-gray-500 mt-2">Tidak. Kami menggunakan pendekatan "Challenge by Choice", di mana peserta didorong namun keputusan akhir ada pada kenyamanan peserta.</p>
+                <div class="mt-10 md:mt-12 space-y-3 md:space-y-4">
+                    <h3 class="text-lg md:text-xl font-bold text-brand-dark">FAQ Tentang Keamanan Outbound</h3>
+                    <div class="border rounded-xl p-4 bg-white">
+                        <h4 class="font-bold text-xs md:text-sm">Apakah peserta yang takut ketinggian wajib ikut flying fox?</h4>
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">Tidak. Kami menggunakan pendekatan "Challenge by Choice", di mana peserta didorong namun keputusan akhir ada pada kenyamanan peserta.</p>
                     </div>
-                    <div class="border rounded-xl p-4">
-                        <h4 class="font-bold text-sm">Bagaimana jika terjadi hujan saat kegiatan berlangsung?</h4>
-                        <p class="text-xs text-gray-500 mt-2">Kami memiliki SOP cuaca ekstrem. Jika terjadi petir atau hujan badai, aktivitas luar ruangan segera dihentikan dan dipindahkan ke area indoor.</p>
+                    <div class="border rounded-xl p-4 bg-white">
+                        <h4 class="font-bold text-xs md:text-sm">Bagaimana jika terjadi hujan saat kegiatan berlangsung?</h4>
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">Kami memiliki SOP cuaca ekstrem. Jika terjadi petir atau hujan badai, aktivitas luar ruangan segera dihentikan dan dipindahkan ke area indoor.</p>
                     </div>
                 </div>
             </article>
 
-            <div class="mt-16 flex flex-wrap items-center gap-4 py-6 border-y border-gray-100">
-                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Bagikan:</span>
-                <a href="https://wa.me/?text=Pentingnya%20Safety%20dalam%20Outbound" class="bg-[#25D366] text-white px-4 py-2 rounded-full text-xs flex items-center gap-2"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-                <a href="#" class="bg-[#1877F2] text-white px-4 py-2 rounded-full text-xs flex items-center gap-2"><i class="fa-brands fa-facebook"></i> Facebook</a>
-                <a href="#" class="bg-black text-white px-4 py-2 rounded-full text-xs flex items-center gap-2"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
+            <div class="mt-12 md:mt-16 flex flex-wrap items-center gap-3 md:gap-4 py-6 border-y border-gray-100">
+                <span class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 w-full sm:w-auto mb-2 sm:mb-0">Bagikan:</span>
+                <a href="https://wa.me/?text=Pentingnya%20Safety%20dalam%20Outbound" class="bg-[#25D366] text-white px-4 py-2 rounded-full text-xs flex items-center gap-2 hover:-translate-y-1 transition"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="#" class="bg-[#1877F2] text-white px-4 py-2 rounded-full text-xs flex items-center gap-2 hover:-translate-y-1 transition"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href="#" class="bg-black text-white px-4 py-2 rounded-full text-xs flex items-center gap-2 hover:-translate-y-1 transition"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
             </div>
 
-            <div class="mt-12 flex flex-col md:flex-row gap-6 p-8 bg-brand-light rounded-3xl items-center">
-                <img src="https://placehold.co/150x150/4a6741/ffffff?text=Expert" alt="Author" class="w-20 h-20 rounded-full border-4 border-white shadow-sm">
+            <div class="mt-10 md:mt-12 flex flex-col md:flex-row gap-4 md:gap-6 p-6 md:p-8 bg-brand-light rounded-2xl md:rounded-3xl items-center text-center md:text-left">
+                <img src="https://placehold.co/150x150/4a6741/ffffff?text=Expert" alt="Author" class="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-white shadow-sm shrink-0">
                 <div>
-                    <h5 class="font-bold text-brand-dark">Oleh: Budi Santoso</h5>
-                    <p class="text-xs text-gray-500 leading-relaxed">Kepala Operasional Safety di OUTBOUND™ dengan pengalaman 15 tahun sebagai praktisi High Rope dan penyelamatan medan sulit.</p>
+                    <h5 class="font-bold text-brand-dark text-sm md:text-base mb-1">Oleh: Budi Santoso</h5>
+                    <p class="text-[10px] md:text-xs text-gray-500 leading-relaxed italic">Kepala Operasional Safety di OUTBOUND™ dengan pengalaman 15 tahun sebagai praktisi High Rope dan penyelamatan medan sulit.</p>
                 </div>
             </div>
         </div>
     </main>
 
-    <section class="bg-gray-50 py-20">
-        <div class="container mx-auto px-6">
-            <h3 class="text-2xl font-bold text-center mb-12">Artikel Terkait Lainnya</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col">
-                    <img src="https://placehold.co/600x300/7f9065/ffffff?text=Teamwork+Tips" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h4 class="font-bold mb-3">5 Cara Meningkatkan Sinergi Tim di Kantor</h4>
-                        <p class="text-xs text-gray-500 mb-4 line-clamp-2">Pelajari teknik komunikasi dan kolaborasi modern untuk tim Anda...</p>
-                        <a href="cara-meningkatkan-sinergi-tim-kantor.html" class="text-brand-green font-bold text-xs uppercase tracking-tighter">Baca Selengkapnya</a>
+    <section class="bg-gray-50 py-12 md:py-20 mt-8 md:mt-10">
+        <div class="container mx-auto px-4 md:px-6">
+            <h3 class="text-xl md:text-2xl font-bold text-center mb-8 md:mb-12 text-brand-dark">Artikel Terkait Lainnya</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+                <a href="cara-meningkatkan-sinergi-tim-kantor.html" class="bg-white rounded-2xl md:rounded-3xl shadow-sm hover:shadow-md transition overflow-hidden flex flex-col h-full group">
+                    <img src="https://placehold.co/600x300/7f9065/ffffff?text=Teamwork+Tips" class="w-full h-40 md:h-48 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="p-5 md:p-6 flex flex-col flex-grow">
+                        <h4 class="font-bold text-brand-dark group-hover:text-brand-green transition text-sm md:text-base mb-2 md:mb-3">5 Cara Meningkatkan Sinergi Tim di Kantor</h4>
+                        <p class="text-xs text-gray-500 mb-4 line-clamp-2 flex-grow">Pelajari teknik komunikasi dan kolaborasi modern untuk membangun tim yang solid...</p>
+                        <span class="text-brand-green font-bold text-[10px] md:text-xs uppercase tracking-tighter mt-auto">Baca Selengkapnya</span>
                     </div>
-                </div>
-                <div class="bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col">
-                    <img src="https://placehold.co/600x300/f2ece4/333333?text=Top+Destinations" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h4 class="font-bold mb-3">Rekomendasi Lokasi Outbound Terpopuler 2024</h4>
-                        <p class="text-xs text-gray-500 mb-4 line-clamp-2">Rekomendasi tempat terbaik dari Bogor hingga Bandung dengan fasilitas...</p>
-                        <a href="review-tempat-outbound-bogor-view-terbaik.html" class="text-brand-green font-bold text-xs uppercase tracking-tighter">Baca Selengkapnya</a>
+                </a>
+                <a href="review-tempat-outbound-bogor-view-terbaik.html" class="bg-white rounded-2xl md:rounded-3xl shadow-sm hover:shadow-md transition overflow-hidden flex flex-col h-full group">
+                    <img src="https://placehold.co/600x300/f2ece4/333333?text=Top+Destinations" class="w-full h-40 md:h-48 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="p-5 md:p-6 flex flex-col flex-grow">
+                        <h4 class="font-bold text-brand-dark group-hover:text-brand-green transition text-sm md:text-base mb-2 md:mb-3">Rekomendasi Lokasi Outbound Terpopuler 2024</h4>
+                        <p class="text-xs text-gray-500 mb-4 line-clamp-2 flex-grow">Rekomendasi tempat terbaik dari Bogor hingga Bandung dengan fasilitas...</p>
+                        <span class="text-brand-green font-bold text-[10px] md:text-xs uppercase tracking-tighter mt-auto">Baca Selengkapnya</span>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <footer class="bg-brand-dark text-brand-light pt-16 pb-8">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-white/10 pb-12 mb-8">
+    <footer class="bg-brand-dark text-brand-light pt-12 md:pt-16 pb-8">
+        <div class="container mx-auto px-4 md:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 border-b border-white/10 pb-10 md:pb-12 mb-8">
             <div>
-                <div class="text-xl font-bold mb-6">OUTBOUND<sup class="text-xs">TM</sup></div>
-                <p class="text-sm opacity-70">Menciptakan momen kebersamaan yang tak terlupakan melalui petualangan di alam bebas.</p>
+                <div class="text-xl font-bold mb-4 md:mb-6 text-white">OUTBOUND<sup class="text-xs">TM</sup></div>
+                <p class="text-xs md:text-sm opacity-70 leading-relaxed">Menciptakan momen kebersamaan yang tak terlupakan melalui petualangan di alam bebas.</p>
             </div>
             <div>
-                <h4 class="font-bold mb-6">Navigasi</h4>
-                <ul class="space-y-3 text-sm opacity-70">
-                    <li><a href="index.html" class="hover:text-white">Beranda</a></li>
-                    <li><a href="paket.html" class="hover:text-white">Paket</a></li>
-                    <li><a href="blog.html" class="hover:text-white">Blog</a></li>
+                <h4 class="font-bold mb-4 md:mb-6 text-white text-sm md:text-base">Navigasi</h4>
+                <ul class="space-y-3 text-xs md:text-sm opacity-70">
+                    <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+                    <li><a href="paket.html" class="hover:text-white transition">Paket</a></li>
+                    <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold mb-6">Kontak</h4>
+                <h4 class="font-bold mb-4 md:mb-6 text-white text-sm md:text-base">Kontak</h4>
                 <div class="flex space-x-4">
-                    <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://wa.me/628000000000" target="_blank" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition"><i class="fa-brands fa-whatsapp"></i></a>
                     <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
         </div>
-        <div class="text-center text-[10px] opacity-40">© 2026 Outbound Adventure. All rights reserved.</div>
+        <div class="container mx-auto px-4 md:px-6 text-center text-[10px] opacity-40">
+            © 2026 Outbound Adventure. All rights reserved.
+        </div>
     </footer>
 
     <a href="#" id="btt-btn" class="float-btn"><i class="fa-solid fa-arrow-up"></i></a>
-    <a href="https://wa.me/628000000000" id="wa-btn" class="float-btn"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://wa.me/628000000000" target="_blank" id="wa-btn" class="float-btn"><i class="fa-brands fa-whatsapp"></i></a>
 
     <script>
+        // Logic untuk Dropdown Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Back to Top functionality
         const bttBtn = document.getElementById("btt-btn");
         window.onscroll = function () {
             if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
