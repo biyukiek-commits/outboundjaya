@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lokasi Outbound - OUTBOUND™</title>
-    <meta name="description" content="Eksplorasi lokasi outbound terbaik dengan fasilitas lengkap dan pemandangan menakjubkan untuk team building Anda.">
-    <meta name="keywords" content="lokasi outbound, tempat gathering, lokasi team building, outbound bogor, outbound bandung, outbound sentul">
+    <meta name="description"
+        content="Eksplorasi lokasi outbound terbaik dengan fasilitas lengkap dan pemandangan menakjubkan untuk team building Anda.">
+    <meta name="keywords"
+        content="lokasi outbound, tempat gathering, lokasi team building, outbound bogor, outbound bandung, outbound sentul">
     <meta property="og:title" content="Lokasi Outbound - OUTBOUND™">
-    <meta property="og:description" content="Eksplorasi lokasi outbound terbaik dengan fasilitas lengkap dan pemandangan menakjubkan.">
+    <meta property="og:description"
+        content="Eksplorasi lokasi outbound terbaik dengan fasilitas lengkap dan pemandangan menakjubkan.">
     <meta property="og:image" content="https://placehold.co/1200x630/4a6741/ffffff?text=Lokasi+Outbound">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://outboundjaya.vercel.app/lokasi.html">
@@ -42,23 +45,28 @@
         }
     </script>
     <style>
-        html, body {
+        html,
+        body {
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
+
         body {
             color: #333333;
             background-color: #ffffff;
         }
+
         .bg-blob-sub {
             background: linear-gradient(135deg, #f0f4ef 0%, #ffffff 100%);
             border-bottom-right-radius: 80px;
         }
+
         @media (min-width: 1024px) {
             .bg-blob-sub {
                 border-bottom-right-radius: 150px;
             }
         }
+
         .location-card:hover img {
             transform: scale(1.05);
         }
@@ -67,40 +75,54 @@
 
 <body class="antialiased">
 
-    <nav class="container mx-auto px-4 md:px-6 py-6 flex justify-between items-center relative z-50 bg-white md:bg-transparent">
+    <nav
+        class="container mx-auto px-4 md:px-6 py-6 flex justify-between items-center relative z-50 bg-white md:bg-transparent">
         <div class="text-2xl font-bold tracking-tighter text-brand-dark">OUTBOUND<sup class="text-xs">TM</sup></div>
-        
+
         <div class="hidden md:flex space-x-8 text-sm font-medium">
-            <a href="index.html" class="hover:text-brand-green transition">Beranda</a>
+            <a href="index.html" class="text-brand-green font-semibold">Beranda</a>
             <a href="paket.html" class="hover:text-brand-green transition">Paket</a>
-            <a href="lokasi.html" class="text-brand-green font-bold">Lokasi</a>
+            <a href="lokasi.html" class="hover:text-brand-green transition">Lokasi</a>
             <a href="testimoni.html" class="hover:text-brand-green transition">Testimoni</a>
             <a href="tentangkami.html" class="hover:text-brand-green transition">Tentang Kami</a>
             <a href="blog.html" class="hover:text-brand-green transition">Blog</a>
         </div>
 
         <div class="flex space-x-5 text-gray-600 items-center">
-            <button class="hover:text-brand-green transition"><i class="fa-solid fa-calendar-check"></i></button>
-            <button class="hover:text-brand-green transition"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none"><i class="fa-solid fa-bars"></i></button>
+            <a href="https://wa.me/6281234567890" target="_blank"
+                class="hidden md:block bg-brand-green text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-dark transition">Hubungi
+                Kami</a>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none"><i
+                    class="fa-solid fa-bars"></i></button>
         </div>
 
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 flex-col px-4 py-2">
-            <a href="index.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Beranda</a>
-            <a href="paket.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Paket</a>
-            <a href="lokasi.html" class="block py-3 text-brand-green font-bold border-b border-gray-50">Lokasi</a>
-            <a href="testimoni.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Testimoni</a>
-            <a href="tentangkami.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Tentang Kami</a>
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 flex-col px-4 py-2">
+            <a href="index.html" class="block py-3 text-brand-green font-semibold border-b border-gray-50">Beranda</a>
+            <a href="paket.html"
+                class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Paket</a>
+            <a href="lokasi.html"
+                class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Lokasi</a>
+            <a href="testimoni.html"
+                class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Testimoni</a>
+            <a href="tentangkami.html"
+                class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Tentang Kami</a>
             <a href="blog.html" class="block py-3 text-gray-700 hover:text-brand-green">Blog</a>
+            <a href="https://wa.me/6281234567890" target="_blank"
+                class="block mt-2 mb-4 bg-brand-green text-white text-center py-3 rounded-lg font-semibold hover:bg-brand-dark">Hubungi
+                Kami</a>
         </div>
     </nav>
 
     <header class="bg-blob-sub pt-10 pb-16 md:pt-12 md:pb-20">
         <div class="container mx-auto px-4 md:px-6 text-center">
-            <p class="text-xs md:text-sm font-semibold tracking-wider text-brand-green mb-2 md:mb-3 uppercase">Pilih Destinasi Anda</p>
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4 md:mb-6 leading-tight">Lokasi Outbound Terbaik</h1>
+            <p class="text-xs md:text-sm font-semibold tracking-wider text-brand-green mb-2 md:mb-3 uppercase">Pilih
+                Destinasi Anda</p>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4 md:mb-6 leading-tight">Lokasi
+                Outbound Terbaik</h1>
             <p class="text-sm md:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Kami bekerja sama dengan berbagai venue eksklusif di lokasi strategis yang menawarkan udara segar, pemandangan indah, dan fasilitas lengkap untuk kegiatan tim Anda.
+                Kami bekerja sama dengan berbagai venue eksklusif di lokasi strategis yang menawarkan udara segar,
+                pemandangan indah, dan fasilitas lengkap untuk kegiatan tim Anda.
             </p>
         </div>
     </header>
@@ -108,51 +130,68 @@
     <section class="py-12 md:py-20">
         <div class="container mx-auto px-4 md:px-6">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
-                
-                <div class="location-card group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl flex flex-col h-full">
+
+                <div
+                    class="location-card group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl flex flex-col h-full">
                     <div class="relative overflow-hidden h-56 md:h-64 shrink-0">
-                        <img src="img/IMG_2827.webp" alt="Puncak Bogor" class="w-full h-full object-cover transition-transform duration-500">
-                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] md:text-xs font-bold text-brand-dark">
+                        <img src="img/IMG_2827.webp" alt="Puncak Bogor"
+                            class="w-full h-full object-cover transition-transform duration-500">
+                        <div
+                            class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] md:text-xs font-bold text-brand-dark">
                             <i class="fa-solid fa-star text-yellow-500 mr-1"></i> Favorit
                         </div>
                     </div>
                     <div class="p-5 md:p-6 flex flex-col flex-grow">
                         <h3 class="text-lg md:text-xl font-bold text-brand-dark mb-2">Puncak, Bogor</h3>
-                        <p class="text-xs md:text-sm text-gray-500 mb-3 md:mb-4"><i class="fa-solid fa-location-dot mr-2"></i> Jawa Barat, Indonesia</p>
-                        <p class="text-xs md:text-sm text-gray-600 mb-6 leading-relaxed flex-grow">Area pegunungan dengan udara sejuk, cocok untuk kegiatan Paintball, Offroad, dan Team Building skala besar.</p>
+                        <p class="text-xs md:text-sm text-gray-500 mb-3 md:mb-4"><i
+                                class="fa-solid fa-location-dot mr-2"></i> Jawa Barat, Indonesia</p>
+                        <p class="text-xs md:text-sm text-gray-600 mb-6 leading-relaxed flex-grow">Area pegunungan
+                            dengan udara sejuk, cocok untuk kegiatan Paintball, Offroad, dan Team Building skala besar.
+                        </p>
                         <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
                             <span class="text-[10px] md:text-xs font-semibold text-gray-400">Kapasitas: 500+ Org</span>
-                            <a href="#" class="text-brand-green font-bold text-xs md:text-sm hover:underline">Lihat Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                            <a href="#" class="text-brand-green font-bold text-xs md:text-sm hover:underline">Lihat
+                                Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="location-card group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl flex flex-col h-full">
+                <div
+                    class="location-card group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl flex flex-col h-full">
                     <div class="relative overflow-hidden h-56 md:h-64 shrink-0">
-                        <img src="img/wisata-paralayang2.webp" alt="Lembang Bandung" class="w-full h-full object-cover transition-transform duration-500">
+                        <img src="img/wisata-paralayang2.webp" alt="Lembang Bandung"
+                            class="w-full h-full object-cover transition-transform duration-500">
                     </div>
                     <div class="p-5 md:p-6 flex flex-col flex-grow">
                         <h3 class="text-lg md:text-xl font-bold text-brand-dark mb-2">Lembang, Bandung</h3>
-                        <p class="text-xs md:text-sm text-gray-500 mb-3 md:mb-4"><i class="fa-solid fa-location-dot mr-2"></i> Jawa Barat, Indonesia</p>
-                        <p class="text-xs md:text-sm text-gray-600 mb-6 leading-relaxed flex-grow">Dikelilingi hutan pinus yang asri. Sangat direkomendasikan untuk program Camping Eksklusif dan High Ropes.</p>
+                        <p class="text-xs md:text-sm text-gray-500 mb-3 md:mb-4"><i
+                                class="fa-solid fa-location-dot mr-2"></i> Jawa Barat, Indonesia</p>
+                        <p class="text-xs md:text-sm text-gray-600 mb-6 leading-relaxed flex-grow">Dikelilingi hutan
+                            pinus yang asri. Sangat direkomendasikan untuk program Camping Eksklusif dan High Ropes.</p>
                         <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
                             <span class="text-[10px] md:text-xs font-semibold text-gray-400">Kapasitas: 300+ Org</span>
-                            <a href="#" class="text-brand-green font-bold text-xs md:text-sm hover:underline">Lihat Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                            <a href="#" class="text-brand-green font-bold text-xs md:text-sm hover:underline">Lihat
+                                Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="location-card group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl flex flex-col h-full">
+                <div
+                    class="location-card group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl flex flex-col h-full">
                     <div class="relative overflow-hidden h-56 md:h-64 shrink-0">
-                        <img src="img/lapangan-outbound.webp" alt="Sentul City" class="w-full h-full object-cover transition-transform duration-500">
+                        <img src="img/lapangan-outbound.webp" alt="Sentul City"
+                            class="w-full h-full object-cover transition-transform duration-500">
                     </div>
                     <div class="p-5 md:p-6 flex flex-col flex-grow">
                         <h3 class="text-lg md:text-xl font-bold text-brand-dark mb-2">Sentul, Bogor</h3>
-                        <p class="text-xs md:text-sm text-gray-500 mb-3 md:mb-4"><i class="fa-solid fa-location-dot mr-2"></i> Jawa Barat, Indonesia</p>
-                        <p class="text-xs md:text-sm text-gray-600 mb-6 leading-relaxed flex-grow">Lokasi paling dekat dari Jakarta. Memiliki medan trekking yang menantang dan sungai yang jernih.</p>
+                        <p class="text-xs md:text-sm text-gray-500 mb-3 md:mb-4"><i
+                                class="fa-solid fa-location-dot mr-2"></i> Jawa Barat, Indonesia</p>
+                        <p class="text-xs md:text-sm text-gray-600 mb-6 leading-relaxed flex-grow">Lokasi paling dekat
+                            dari Jakarta. Memiliki medan trekking yang menantang dan sungai yang jernih.</p>
                         <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
                             <span class="text-[10px] md:text-xs font-semibold text-gray-400">Kapasitas: 200+ Org</span>
-                            <a href="#" class="text-brand-green font-bold text-xs md:text-sm hover:underline">Lihat Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                            <a href="#" class="text-brand-green font-bold text-xs md:text-sm hover:underline">Lihat
+                                Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -168,8 +207,11 @@
                     <div class="text-center p-6 md:p-8">
                         <i class="fa-solid fa-map-location-dot text-5xl md:text-6xl text-brand-green mb-3 md:mb-4"></i>
                         <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-2">Peta Jangkauan Kami</h3>
-                        <p class="text-gray-500 text-xs md:text-sm">Klik untuk melihat sebaran lokasi outbound di seluruh Indonesia</p>
-                        <button class="mt-5 md:mt-6 bg-brand-dark text-white px-5 py-2 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-semibold hover:bg-brand-green transition">Buka Google Maps</button>
+                        <p class="text-gray-500 text-xs md:text-sm">Klik untuk melihat sebaran lokasi outbound di
+                            seluruh Indonesia</p>
+                        <button
+                            class="mt-5 md:mt-6 bg-brand-dark text-white px-5 py-2 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-semibold hover:bg-brand-green transition">Buka
+                            Google Maps</button>
                     </div>
                 </div>
             </div>
@@ -177,10 +219,12 @@
     </section>
 
     <footer class="bg-brand-dark text-brand-light pt-16 pb-8">
-        <div class="container mx-auto px-4 md:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-12 border-b border-white/10 pb-10 md:pb-12 mb-8">
+        <div
+            class="container mx-auto px-4 md:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-12 border-b border-white/10 pb-10 md:pb-12 mb-8">
             <div>
                 <div class="text-xl font-bold mb-4 md:mb-6 text-white">OUTBOUND<sup class="text-xs">TM</sup></div>
-                <p class="text-xs md:text-sm opacity-70 leading-relaxed max-w-sm">Menciptakan momen kebersamaan yang tak terlupakan melalui petualangan di alam bebas.</p>
+                <p class="text-xs md:text-sm opacity-70 leading-relaxed max-w-sm">Menciptakan momen kebersamaan yang tak
+                    terlupakan melalui petualangan di alam bebas.</p>
             </div>
             <div>
                 <h4 class="font-bold mb-4 md:mb-6 text-white">Navigasi</h4>
@@ -195,8 +239,12 @@
             <div>
                 <h4 class="font-bold mb-4 md:mb-6 text-white">Ikuti Kami</h4>
                 <div class="flex space-x-4">
-                    <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/6281234567890" target="_blank" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/6281234567890" target="_blank"
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition"><i
+                            class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>

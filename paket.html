@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paket Outbound - OUTBOUND™</title>
-    <meta name="description" content="Pilihan paket outbound terlengkap mulai dari 1 hari hingga 3 hari 2 malam. Sesuaikan durasi dan kegiatan dengan budget perusahaan Anda.">
-    <meta name="keywords" content="paket outbound, harga outbound, biaya team building, paket gathering kantor, paket outbound bogor">
+    <meta name="description"
+        content="Pilihan paket outbound terlengkap mulai dari 1 hari hingga 3 hari 2 malam. Sesuaikan durasi dan kegiatan dengan budget perusahaan Anda.">
+    <meta name="keywords"
+        content="paket outbound, harga outbound, biaya team building, paket gathering kantor, paket outbound bogor">
     <meta property="og:title" content="Paket Outbound - OUTBOUND™">
     <meta property="og:description" content="Pilihan paket outbound terlengkap untuk kebutuhan perusahaan Anda.">
     <meta property="og:image" content="https://placehold.co/1200x630/4a6741/ffffff?text=Paket+Outbound">
@@ -42,27 +44,33 @@
         }
     </script>
     <style>
-        html, body {
+        html,
+        body {
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
+
         body {
             color: #333333;
             background-color: #ffffff;
             width: 100%;
         }
+
         .bg-blob-sub {
             background: linear-gradient(135deg, #f0f4ef 0%, #ffffff 100%);
             border-bottom-right-radius: 80px;
         }
+
         @media (min-width: 1024px) {
             .bg-blob-sub {
                 border-bottom-right-radius: 150px;
             }
         }
+
         .package-card:hover {
             transform: translateY(-10px);
         }
+
         .float-btn {
             position: fixed;
             right: 20px;
@@ -75,6 +83,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
         }
+
         #wa-btn {
             bottom: 20px;
             width: 60px;
@@ -82,6 +91,7 @@
             background-color: #25D366;
             font-size: 30px;
         }
+
         #btt-btn {
             bottom: 90px;
             width: 50px;
@@ -91,6 +101,7 @@
             opacity: 0;
             pointer-events: none;
         }
+
         #btt-btn.show {
             opacity: 1;
             pointer-events: auto;
@@ -100,12 +111,13 @@
 
 <body class="antialiased">
 
-    <nav class="container mx-auto px-4 md:px-6 py-6 flex justify-between items-center relative z-50 bg-white md:bg-transparent">
+    <nav
+        class="container mx-auto px-4 md:px-6 py-6 flex justify-between items-center relative z-50 bg-white md:bg-transparent">
         <div class="text-2xl font-bold tracking-tighter text-brand-dark">OUTBOUND<sup class="text-xs">TM</sup></div>
-        
+
         <div class="hidden md:flex space-x-8 text-sm font-medium">
-            <a href="index.html" class="hover:text-brand-green transition">Beranda</a>
-            <a href="paket.html" class="text-brand-green font-bold">Paket</a>
+            <a href="index.html" class="text-brand-green font-semibold">Beranda</a>
+            <a href="paket.html" class="hover:text-brand-green transition">Paket</a>
             <a href="lokasi.html" class="hover:text-brand-green transition">Lokasi</a>
             <a href="testimoni.html" class="hover:text-brand-green transition">Testimoni</a>
             <a href="tentangkami.html" class="hover:text-brand-green transition">Tentang Kami</a>
@@ -113,27 +125,40 @@
         </div>
 
         <div class="flex space-x-5 text-gray-600 items-center">
-            <button class="hover:text-brand-green transition"><i class="fa-solid fa-calendar-check"></i></button>
-            <button class="hover:text-brand-green transition"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none"><i class="fa-solid fa-bars"></i></button>
+            <a href="https://wa.me/6281234567890" target="_blank"
+                class="hidden md:block bg-brand-green text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-dark transition">Hubungi
+                Kami</a>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none"><i
+                    class="fa-solid fa-bars"></i></button>
         </div>
 
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 flex-col px-4 py-2">
-            <a href="index.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Beranda</a>
-            <a href="paket.html" class="block py-3 text-brand-green font-bold border-b border-gray-50">Paket</a>
-            <a href="lokasi.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Lokasi</a>
-            <a href="testimoni.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Testimoni</a>
-            <a href="tentangkami.html" class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Tentang Kami</a>
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 flex-col px-4 py-2">
+            <a href="index.html" class="block py-3 text-brand-green font-semibold border-b border-gray-50">Beranda</a>
+            <a href="paket.html"
+                class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Paket</a>
+            <a href="lokasi.html"
+                class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Lokasi</a>
+            <a href="testimoni.html"
+                class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Testimoni</a>
+            <a href="tentangkami.html"
+                class="block py-3 text-gray-700 hover:text-brand-green border-b border-gray-50">Tentang Kami</a>
             <a href="blog.html" class="block py-3 text-gray-700 hover:text-brand-green">Blog</a>
+            <a href="https://wa.me/6281234567890" target="_blank"
+                class="block mt-2 mb-4 bg-brand-green text-white text-center py-3 rounded-lg font-semibold hover:bg-brand-dark">Hubungi
+                Kami</a>
         </div>
     </nav>
 
     <header class="bg-blob-sub pt-10 pb-16 md:pt-12 md:pb-20">
         <div class="container mx-auto px-4 md:px-6 text-center">
-            <p class="text-xs md:text-sm font-semibold tracking-wider text-brand-green mb-2 md:mb-3 uppercase">Pilihan Program Kami</p>
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4 md:mb-6 leading-tight">Paket Outbound Terpopuler</h1>
+            <p class="text-xs md:text-sm font-semibold tracking-wider text-brand-green mb-2 md:mb-3 uppercase">Pilihan
+                Program Kami</p>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4 md:mb-6 leading-tight">Paket
+                Outbound Terpopuler</h1>
             <p class="text-sm md:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Pilih paket yang paling sesuai dengan tujuan tim Anda, mulai dari rekreasi santai hingga pengembangan kepemimpinan yang intensif.
+                Pilih paket yang paling sesuai dengan tujuan tim Anda, mulai dari rekreasi santai hingga pengembangan
+                kepemimpinan yang intensif.
             </p>
         </div>
     </header>
@@ -141,51 +166,92 @@
     <section class="py-12 md:py-20 bg-white">
         <div class="container mx-auto px-4 md:px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                
-                <div class="package-card transition-all duration-300 border border-gray-100 rounded-2xl md:rounded-3xl p-6 md:p-8 bg-white shadow-sm hover:shadow-xl flex flex-col h-full w-full">
-                    <div class="w-12 h-12 md:w-14 md:h-14 bg-brand-light rounded-xl md:rounded-2xl flex items-center justify-center mb-5 md:mb-6 text-brand-green text-xl md:text-2xl">
+
+                <div
+                    class="package-card transition-all duration-300 border border-gray-100 rounded-2xl md:rounded-3xl p-6 md:p-8 bg-white shadow-sm hover:shadow-xl flex flex-col h-full w-full">
+                    <div
+                        class="w-12 h-12 md:w-14 md:h-14 bg-brand-light rounded-xl md:rounded-2xl flex items-center justify-center mb-5 md:mb-6 text-brand-green text-xl md:text-2xl">
                         <i class="fa-solid fa-users"></i>
                     </div>
                     <h3 class="text-lg md:text-xl font-bold text-brand-dark mb-3">Team Bonding</h3>
-                    <p class="text-gray-500 text-xs md:text-sm mb-6 leading-relaxed flex-grow">Fokus pada keceriaan dan mempererat hubungan antar karyawan melalui fun games.</p>
+                    <p class="text-gray-500 text-xs md:text-sm mb-6 leading-relaxed flex-grow">Fokus pada keceriaan dan
+                        mempererat hubungan antar karyawan melalui fun games.</p>
                     <ul class="space-y-3 mb-8 text-xs md:text-sm text-gray-600">
-                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Durasi 1 Hari (Full Day)</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>5-6 Fun Games Interaktif</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Makan Siang & Coffee Break</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Dokumentasi Standar</span></li>
+                        <li class="flex items-start"><i
+                                class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Durasi 1 Hari
+                                (Full Day)</span></li>
+                        <li class="flex items-start"><i
+                                class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>5-6 Fun Games
+                                Interaktif</span></li>
+                        <li class="flex items-start"><i
+                                class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Makan Siang &
+                                Coffee Break</span></li>
+                        <li class="flex items-start"><i
+                                class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Dokumentasi
+                                Standar</span></li>
                     </ul>
-                    <button class="w-full py-3 bg-brand-green text-white rounded-xl font-bold hover:bg-brand-dark transition text-sm md:text-base mt-auto">Pilih Paket</button>
+                    <button
+                        class="w-full py-3 bg-brand-green text-white rounded-xl font-bold hover:bg-brand-dark transition text-sm md:text-base mt-auto">Pilih
+                        Paket</button>
                 </div>
 
-                <div class="package-card transition-all duration-300 border-2 border-brand-green rounded-2xl md:rounded-3xl p-6 md:p-8 bg-white shadow-lg lg:scale-105 relative flex flex-col h-full w-full mt-2 md:mt-0">
-                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-green text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest z-10 whitespace-nowrap">Paling Laris</div>
-                    <div class="w-12 h-12 md:w-14 md:h-14 bg-brand-green rounded-xl md:rounded-2xl flex items-center justify-center mb-5 md:mb-6 text-white text-xl md:text-2xl mt-2 md:mt-0">
+                <div
+                    class="package-card transition-all duration-300 border-2 border-brand-green rounded-2xl md:rounded-3xl p-6 md:p-8 bg-white shadow-lg lg:scale-105 relative flex flex-col h-full w-full mt-2 md:mt-0">
+                    <div
+                        class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-green text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest z-10 whitespace-nowrap">
+                        Paling Laris</div>
+                    <div
+                        class="w-12 h-12 md:w-14 md:h-14 bg-brand-green rounded-xl md:rounded-2xl flex items-center justify-center mb-5 md:mb-6 text-white text-xl md:text-2xl mt-2 md:mt-0">
                         <i class="fa-solid fa-mountain-sun"></i>
                     </div>
                     <h3 class="text-lg md:text-xl font-bold text-brand-dark mb-3">Adventure Camp</h3>
-                    <p class="text-gray-500 text-xs md:text-sm mb-6 leading-relaxed flex-grow">Kombinasi camping eksklusif dengan aktivitas petualangan menantang di alam bebas.</p>
+                    <p class="text-gray-500 text-xs md:text-sm mb-6 leading-relaxed flex-grow">Kombinasi camping
+                        eksklusif dengan aktivitas petualangan menantang di alam bebas.</p>
                     <ul class="space-y-3 mb-8 text-xs md:text-sm text-gray-600">
-                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Durasi 2 Hari 1 Malam</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Rafting / Archery Battle</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Api Unggun & BBQ Night</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Tenda Eksklusif / Glamping</span></li>
+                        <li class="flex items-start"><i
+                                class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Durasi 2 Hari 1
+                                Malam</span></li>
+                        <li class="flex items-start"><i
+                                class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Rafting /
+                                Archery Battle</span></li>
+                        <li class="flex items-start"><i
+                                class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Api Unggun &
+                                BBQ Night</span></li>
+                        <li class="flex items-start"><i
+                                class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Tenda Eksklusif
+                                / Glamping</span></li>
                     </ul>
-                    <button class="w-full py-3 bg-brand-dark text-white rounded-xl font-bold hover:bg-brand-green transition text-sm md:text-base mt-auto">Pilih Paket</button>
+                    <button
+                        class="w-full py-3 bg-brand-dark text-white rounded-xl font-bold hover:bg-brand-green transition text-sm md:text-base mt-auto">Pilih
+                        Paket</button>
                 </div>
 
-                <div class="package-card transition-all duration-300 border border-gray-100 rounded-2xl md:rounded-3xl p-6 md:p-8 bg-white shadow-sm hover:shadow-xl flex flex-col h-full w-full">
-                    <div class="w-12 h-12 md:w-14 md:h-14 bg-brand-light rounded-xl md:rounded-2xl flex items-center justify-center mb-5 md:mb-6 text-brand-green text-xl md:text-2xl">
+                <div
+                    class="package-card transition-all duration-300 border border-gray-100 rounded-2xl md:rounded-3xl p-6 md:p-8 bg-white shadow-sm hover:shadow-xl flex flex-col h-full w-full">
+                    <div
+                        class="w-12 h-12 md:w-14 md:h-14 bg-brand-light rounded-xl md:rounded-2xl flex items-center justify-center mb-5 md:mb-6 text-brand-green text-xl md:text-2xl">
                         <i class="fa-solid fa-medal"></i>
                     </div>
                     <h3 class="text-lg md:text-xl font-bold text-brand-dark mb-3">Leadership Program</h3>
-                    <p class="text-gray-500 text-xs md:text-sm mb-6 leading-relaxed flex-grow">Program intensif berbasis Experiential Learning untuk level manajerial dan pimpinan.</p>
+                    <p class="text-gray-500 text-xs md:text-sm mb-6 leading-relaxed flex-grow">Program intensif berbasis
+                        Experiential Learning untuk level manajerial dan pimpinan.</p>
                     <ul class="space-y-3 mb-8 text-xs md:text-sm text-gray-600">
-                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Custom Durasi (Min. 2 Hari)</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Analisis Perilaku Tim</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Fasilitator Bersertifikat</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Laporan Evaluasi Peserta</span></li>
+                        <li class="flex items-start"><i
+                                class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Custom Durasi
+                                (Min. 2 Hari)</span></li>
+                        <li class="flex items-start"><i
+                                class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Analisis
+                                Perilaku Tim</span></li>
+                        <li class="flex items-start"><i
+                                class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Fasilitator
+                                Bersertifikat</span></li>
+                        <li class="flex items-start"><i
+                                class="fa-solid fa-check text-brand-green mt-1 mr-3 shrink-0"></i> <span>Laporan
+                                Evaluasi Peserta</span></li>
                     </ul>
-                    <button class="w-full py-3 bg-brand-green text-white rounded-xl font-bold hover:bg-brand-dark transition text-sm md:text-base mt-auto">Pilih Paket</button>
+                    <button
+                        class="w-full py-3 bg-brand-green text-white rounded-xl font-bold hover:bg-brand-dark transition text-sm md:text-base mt-auto">Pilih
+                        Paket</button>
                 </div>
 
             </div>
@@ -193,10 +259,12 @@
     </section>
 
     <footer class="bg-brand-dark text-brand-light pt-16 pb-8">
-        <div class="container mx-auto px-4 md:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-12 border-b border-white/10 pb-10 md:pb-12 mb-8">
+        <div
+            class="container mx-auto px-4 md:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-12 border-b border-white/10 pb-10 md:pb-12 mb-8">
             <div>
                 <div class="text-xl font-bold mb-4 md:mb-6 text-white">OUTBOUND<sup class="text-xs">TM</sup></div>
-                <p class="text-sm opacity-70 leading-relaxed max-w-sm">Menciptakan momen kebersamaan yang tak terlupakan melalui
+                <p class="text-sm opacity-70 leading-relaxed max-w-sm">Menciptakan momen kebersamaan yang tak terlupakan
+                    melalui
                     petualangan di alam bebas.</p>
             </div>
             <div>
@@ -227,7 +295,8 @@
     </footer>
 
     <a href="#" id="btt-btn" class="float-btn"><i class="fa-solid fa-arrow-up"></i></a>
-    <a href="https://wa.me/6281234567890" target="_blank" id="wa-btn" class="float-btn"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://wa.me/6281234567890" target="_blank" id="wa-btn" class="float-btn"><i
+            class="fa-brands fa-whatsapp"></i></a>
 
     <script>
         // Mobile Menu Toggle Logic
